@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helloworld</title>
+    <link rel="stylesheet" href="css/style.css">  
+    <style>
+        body {
+            background-color: floralwhite;
+        }
+    </style> <!-- head에 스타일 태그 적용 -->
 </head>
 <body>
     <h1>정상미</h1>
@@ -55,7 +61,17 @@
     </ul>
     <img src="https://img3.yna.co.kr/etc/inner/KR/2023/08/22/AKR20230822056900005_01_i_P2.jpg" alt="예쁜 우리 라이즈 오빠들" style="height: 400px;">
     <!-- alt 는 시각장애인들을 위한 기계나 이미지가 나오지 않을 때 대체할 수 있는 글자 -->
-
+    <hr>
+    <h1 style="background-color: violet; color:white">아이브</h1>  <!--  태그 안에 속성으로 들어간 인라인 css 방식 -->
+    <ul>
+        <li>유진</li>
+        <li>리즈</li>
+        <li>원영</li>
+        <li>가을</li>
+        <li>이서</li>
+        <li>레이</li>
+    </ul> 
+    <img src="https://image.ytn.co.kr/general/jpg/2022/1202/202212021717403313_d.jpg" alt="MAMA 시상식에서 상탄 언니들">
     <hr>
     <form action="">
         <input type="text" placeholder="텍스트 입력하세요">
@@ -71,8 +87,7 @@
         <label for="maratang"><input type="checkbox" name="체크박스" id="maratang">마라탕</label>
         <!-- 비밀번호라는 변수 이름으로 서버에 넘어간다  -->
         <!-- id는 input 태그의 요소를 가리키기 위해 사용한다 -->
-        <input type="submit" value="전송하기">
-        
+        <input type="submit" value="전송하기">     
     </form>
 </body>
 </html>
