@@ -62,3 +62,29 @@ h1 + h2 {               /* h1과 h2는 자매여야 함. h1 바로 아랫자매 
 h1 ~ h3 {              /* h1과 h3 자매여야 함. h1 아랫자매 모든 h3 해당 자매들 */
     background-color: greenyellow;
 }
+
+[type="text"] {         /* type 속성의 값이 text인 요소에 적용 */
+    background-color: lavender;
+}
+
+/* 홀수 번째 자매 중 li인 얘들에 적용 */
+li:nth-child(2n-1) {    /* 짝수에서 1을 빼면 홀수가 나오기 때문에 */
+    font-size: 40px;
+}
+
+li:nth-child(odd) {     /* 홀수: odd, 2n-1*/
+    font-size: 8px;
+}
+
+li:nth-child(even) {    /* 짝수: even, 2n */
+    font-weight: 200;
+}
+
+/* Honey Tip */
+body > ul:nth-child(21) > li:nth-child(4) {
+    font-size: 200px;
+}
+
+body > ul:nth-child(25) > li.japan {
+    font-size: 100px;  
+}
