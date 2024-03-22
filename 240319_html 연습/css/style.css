@@ -2,3 +2,63 @@ h1 {
     color: #333333;
     /* 여기서 아이브 글자는 색이 안 바뀌는 이유는 인라인 CSS 태그에서 우선순위가 밀렸기 때문 */
 }
+
+
+li {
+    background-color: chocolate
+}
+
+ul > ul > li {      /* ul 자식 ul 자식 li에 적용 */
+    background-color: blueviolet;
+    /* ul -> ul -> li 로 투, 쓰리, 포가 적용됨 */
+    /* 얘도 ul > li에는 있지만 얘는 조금 더 구체적이기 때문에 우선순위가 높음 그래서 ul > li와 순서가 바뀌어도 색은 같음 */
+}
+
+ul > li {           /* ul 바로 아래 자식 li에 적용 */
+    background-color: aquamarine;
+    /* 리스트 중 순서가 없는 리스트만 이, 여, 원, 아이브 멤버들, 라이즈 멤버들*/
+}
+
+
+.korea {
+    color: blue;
+}
+
+.japan {
+    color: crimson;
+}
+
+.incheon {
+    color: darkblue;
+}
+
+#leader {
+    color: gold;
+}
+
+li:first-child {        /* 첫째인데 li인 아이 */
+    font-weight: bold;
+}
+
+li:last-child {         /* 막내인데 li인 아이 */
+    font-style: italic;
+}
+li:nth-child(3) {
+    color: hotpink;
+}
+
+li:nth-child(2n) {      /* 짝수번째인데 li인 아이 */
+    background-color: aliceblue;
+}
+
+h1, h3 {                /* h1과 h3에 모두 적용 */
+    /* background-color: gainsboro; */
+}
+
+h1 + h2 {               /* h1과 h2는 자매여야 함. h1 바로 아랫자매 h2여야 함. */
+    background-color: red;
+}
+
+h1 ~ h3 {              /* h1과 h3 자매여야 함. h1 아랫자매 모든 h3 해당 자매들 */
+    background-color: greenyellow;
+}
