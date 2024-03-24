@@ -19,7 +19,6 @@ ul > li {           /* ul 바로 아래 자식 li에 적용 */
     /* 리스트 중 순서가 없는 리스트만 이, 여, 원, 아이브 멤버들, 라이즈 멤버들*/
 }
 
-
 .korea {
     color: blue;
 }
@@ -43,6 +42,7 @@ li:first-child {        /* 첫째인데 li인 아이 */
 li:last-child {         /* 막내인데 li인 아이 */
     font-style: italic;
 }
+
 li:nth-child(3) {
     color: hotpink;
 }
@@ -55,7 +55,7 @@ h1, h3 {                /* h1과 h3에 모두 적용 */
     /* background-color: gainsboro; */
 }
 
-h1 + h2 {               /* h1과 h2는 자매여야 함. h1 바로 아랫자매 h2여야 함. */
+h1 + h2 {               /* h1과 h2는 자매여야 함. h1 바로 아랫자매 h2여야 함. 그리고 거기에만 적용됨 */
     background-color: red;
 }
 
@@ -80,7 +80,7 @@ li:nth-child(even) {    /* 짝수: even, 2n */
     font-weight: 200;
 }
 
-/* Honey Tip */
+/* Honey Tip : 검사 -> 원하는 요소 클릭 -> Copy -> Selector */
 body > ul:nth-child(21) > li:nth-child(4) {
     font-size: 200px;
 }
