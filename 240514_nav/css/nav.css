@@ -10,7 +10,7 @@
     --body-color: #fff;
 
     /* font */
-    --body-font: 'Cute Font', sans-serif;
+    --body-font: 'Cute Font', sans-serif; /* sans : 없다 serif : 장식이 */
     --h1-font-size: 2rem;   /* 크롬 > 설정 > 글자 크기 : 중간일 때, 대문자 M의 너비인 16px을 기준으로 함 = 1rem */
     --h2-font-size: 1.5rem; /* 16 * 1.5 = 24px */
     --h3-font-size: 1.25rem;
@@ -23,5 +23,43 @@
 
     /* nav */
     --nav-height: 44px; /* 높이 권장 */
-    
+}
+
+/* nav */
+body {
+    font-family: var(--body-font); 
+    background-color: var(--body-color);
+}
+body>header {
+    position: absolute; /* 절댓값, 절대 위치, 위치 조정 맘대로 할 수 있음, 위치 고정했음 nav바는 스크롤을 해도 고정 시킬 것임 */
+    top: 0;
+    right: 0;
+    left: 0;
+}
+nav.container {
+    background-color: var(--primary-color); /* 메뉴바 색상 줌 */
+    height: var(--nav-height);              /* 메뉴바 높이 줌 */
+    display: flex;  /* 기본값 : 가로로 배치 됨 / 반응형 / 학매기는 같이 묶어져 있어서 일단 세로 */
+    justify-content: space-between;     /* 메인축(가로)으로 양쪽 정렬 */
+    align-items: center;                /* 교차축(세로)으로 가운데 정렬 */
+    padding: 0 40px;             /* top, right, bottom, left 왼/오른만 양쪽 여백*/
+    color: #fff;
+    font-size: var(--h2-font-size);     /* 웹 폰드 아이콘, 글자 크게 / 로고도 바뀜 */
+}
+nav a {
+    color: #fff;
+}
+
+.nav-logo {
+    margin-top: 5px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    column-gap: 40px; /* 열과 열 사이(학매기) 사이 사이의 gap(간격) */
+}
+
+.nav-toggle {
+    display: none;  /* 햄버거 메뉴 사라짐 */
 }
