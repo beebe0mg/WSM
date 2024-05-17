@@ -5,7 +5,7 @@ h1 {
 
 
 li {
-    background-color: chocolate
+    background-color: chocolate;
 }
 
 ul > ul > li {      /* ul 자식 ul 자식 li에 적용 */
