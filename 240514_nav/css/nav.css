@@ -63,3 +63,34 @@ nav a {
 .nav-toggle {
     display: none;  /* 햄버거 메뉴 사라짐 */
 }
+
+/* mobile */
+@media screen and (max-width: 600px) {  /* 600px 이하일 때 스타일 / 600px 까지 땡겼을 때 딱 보여짐 */
+    nav.container {
+        padding: 0 20px;    /* 왼/오른 여백 조금 줄이자 */
+    }
+
+    .nav-list {
+        flex-direction: column;   /* 세로로 배치 / 학매기 세로로 배치됨 */
+        background-color: hsla(200, 100%, 25%, 0.6);    /* a 는 약간의 배경색 느낌 */
+        position: absolute;
+        bottom: var(--nav-height); /* 숨겨지게 메뉴바 눌렀을 때 나와야 함*/
+        right: 0; /* left, right 줘서 양 옆에 딱 붙음 */
+        left: 0; /* left, right 줘서 양 옆에 딱 붙음 */
+    }
+
+    .nav-item {
+        padding: 0.5rem 0; /* 메뉴 아이템 세로 간격 벌리자 / 학매기 사이 간격 넓어짐 */
+        border-bottom: 1px solid white; /* 밑줄 긋기 */
+        width: 100%; /* 가로 너비 100% / 양 옆으로 꽉 채우기 / 중요함 */
+        text-align: center; /* 글자 가운데 */
+    }
+
+    .nav-link {
+        display: block; /* 링크의 너비 : 콘텐츠 -> 100%로 늘리자 / 원래는 학매기 글자에 커서 가져다댔을 때만 링크 됐는데 이젠 여백도 가능 */
+    }
+
+    .nav-toggle {
+        display: block; /* 햄버거 메뉴 다시 보여지는 거 */
+    }
+}
