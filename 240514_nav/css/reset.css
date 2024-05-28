@@ -2,6 +2,7 @@
     margin: 0;  /* 단위를 달지 않아도 어차피 다 0임*/
     padding: 0;
     box-sizing: border-box;     /* 크기 기준이 content -> border */
+                                /* 요소의 패딩과 테두리를 포함한 크기를 설정할 수 있게 해주는 CSS 속성 */
 }
 a {
     text-decoration: none;      /* 링크 블루 언더라인 스타일 삭제 */

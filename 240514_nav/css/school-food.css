@@ -1,0 +1,88 @@
+#school-food {
+    flex-direction: column; /* 조식, 중식, 석식 내용을 새로 정렬(메뉴)*/
+    display: flex; /* 가로 정렬, 조식 중식 석식을 가로로 정렬 */
+    align-items: center;
+    margin-top: calc(var(--nav-height) + 100px);
+}
+
+.button-container {
+    display: flex;
+    align-items: flex-end; /* 완전 맨 밑에서부터 맞춰 줘서 동일한 위치까지 올라옴 */
+    column-gap: 20px; /* 화살표 버튼과 화요일 메뉴 사이의 간격 */
+    font-size: var(--h1-font-size);
+    margin-bottom: 40px; /* 화요일 메뉴와 조식 사이의 간격 */
+}
+
+.prev-date,
+.next-date {
+    font-size: var(--h1-font-size);
+    background-color: transparent; /* 배경색을 투명하게 했음 */
+    border: none; /* 버튼의 테두리를 제거했고 */
+    cursor: pointer;
+}
+
+.menu-container {
+    width: 100%; /* 너비를 꽉 채움 */
+    padding: 0 100px; /* 왼/오만 적용 */
+    display: flex; /* 조식, 중식, 석식 가로 정렬 */
+    flex-wrap: wrap; /* 이걸 작성해 주면 화면이 줄어들어도 조식, 중식, 석식이 자동 줄바꿈해서 내려감 */
+    justify-content: center; /* 가운데로 전부 정렬 */
+    column-gap: 80px;
+    row-gap: 40px;
+}
+
+.school-food-menu {
+    max-width: 300px;
+    padding: 20px;
+    flex: 1 0 200px;
+    border: 1px solid rgba(0, 0, 0, 0.25); /* 네 번째는 투명도 */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 그림자 속성, x축, y축, 블러 정도, 그림자의 크기 */
+}
+
+.school-food-menu>.title {
+    margin-bottom: 20px;
+    font-size: var(--h1-font-size);
+    text-align: center;
+}
+
+.school-food-menu>.menu {
+    font-size: var(--h2-font-size);
+    text-align: center;
+}
+
+/* tablet */
+@media screen and (max-width:600px) {
+    #school-food {
+        margin-top: calc(var(--nav-height) + 30px);
+    }    
+    
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .school-food-menu {
+        min-width: 100%; /* 석식 박스의 크기 유지 */
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 300px;
+        margin: 0 auto; /* 고정 너비(최대 너비) 설정 후 작동, menu 요소의 최대 너비와 동일하거나 더 작아야 함.
+                        중앙 정렬을 효과 보이지 않을 수 있음 */
+    }
+
+    .menu-food:nth-child(odd) {
+        text-align: left;
+    }
+    .menu-food:nth-child(even) {
+        text-align: right;
+    }
+
+    .menu-food {
+        width: 50%;
+    }
+}

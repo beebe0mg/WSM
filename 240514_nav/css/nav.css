@@ -36,14 +36,14 @@ body>header {
     right: 0;
     left: 0;
 }
-nav.container {
+nav.container { /* <nav class="nav container"> */
     background-color: var(--primary-color); /* 메뉴바 색상 줌 */
     height: var(--nav-height);              /* 메뉴바 높이 줌 */
     display: flex;  /* 기본값 : 가로로 배치 됨 / 반응형 / 학매기는 같이 묶어져 있어서 일단 세로 */
     justify-content: space-between;     /* 메인축(가로)으로 양쪽 정렬 */
     align-items: center;                /* 교차축(세로)으로 가운데 정렬 */
     padding: 0 40px;             /* top, right, bottom, left 왼/오른만 양쪽 여백*/
-    color: #fff;
+    color: #fff;                /* 텍스트 색상 */
     font-size: var(--h2-font-size);     /* 웹 폰드 아이콘, 글자 크게 / 로고도 바뀜 */
 }
 nav a {
@@ -55,9 +55,10 @@ nav a {
 }
 
 .nav-list {
-    display: flex;
+    display: flex;      /* 학매기를 가로로 배치 */
     align-items: center;
     column-gap: 40px; /* 열과 열 사이(학매기) 사이 사이의 gap(간격) */
+    transition: 0.4s ease-in-out; /* 애니메이션 */
 }
 
 .nav-toggle {
@@ -74,9 +75,10 @@ nav a {
         flex-direction: column;   /* 세로로 배치 / 학매기 세로로 배치됨 */
         background-color: hsla(200, 100%, 25%, 0.6);    /* a 는 약간의 배경색 느낌 */
         position: absolute;
-        bottom: var(--nav-height); /* 숨겨지게 메뉴바 눌렀을 때 나와야 함*/
+        top: calc(var(--nav-height) - 140px); /* 실제 위치는 44px(현재 top의 높이) - 140px / 숨겨지게 햄버거 바 눌렀을 때 나와야 함 *주의 : 연산자 양 옆 띄어쓰기 꼭 해야 함*/
         right: 0; /* left, right 줘서 양 옆에 딱 붙음 */
         left: 0; /* left, right 줘서 양 옆에 딱 붙음 */
+        z-index: -1; /* 학매기를 nav바 뒤에 숨기자! */
     }
 
     .nav-item {
@@ -92,5 +94,10 @@ nav a {
 
     .nav-toggle {
         display: block; /* 햄버거 메뉴 다시 보여지는 거 */
+        cursor: pointer; /* 마우스 포인터 손으로 바꾸자 */
+    }
+
+    .show-menu { /* 방금 만든 클래스, 위에서 학매기 nav바 뒤로 숨긴 거 다시 내리기 */
+        top: var(--nav-height); /* nav-list 아래로 내리자 */
     }
 }
