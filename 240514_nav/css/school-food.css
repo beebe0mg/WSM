@@ -52,7 +52,7 @@
 }
 
 /* tablet */
-@media screen and (max-width:600px) {
+@media screen and (max-width:976px) {
     #school-food {
         margin-top: calc(var(--nav-height) + 30px);
     }    
