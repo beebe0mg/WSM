@@ -32,9 +32,53 @@
     margin-top: 4px;
 }
 
+.product-container {
+    margin: 0 100px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between; /* 몽쉘은 한 개가 되었을 때 왼쪽에 붙어야 하니까 */
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EDEDED;
+    padding: 30px;
+    border-radius: 40px;
+    position: relative;     /* 설레임과 빠삐코 등 이름이 bottom으로 가는데(내 자손 중 position:absolute;인 아이)의 기준이 화면 전체가 아니라 내가 된다.*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);       /* x좌표, y좌표, 블러 */
+}
+
+.product-image {
+    height: 200px;
+    aspect-ratio: 1/1;     /* 이미지 너비(앞)/이미지 높이(뒤) 비율 */
+    object-fit: contain;   /* cover: 공간에 맞게 확대, 잘림; contain: 공간에 맞게 축소, 여백 생김*/
+    border-radius: 10px;
+    background-color: white;    /* 둥글게 한 것이 보여지게 하는 거(원래 설레임과 빠삐코에 안 보여져 있었음) */
+}
+
+.product-name {
+    background-color: #DCDCDC;
+    padding: 4px 30px;
+    font-size: var(--h2-font-size);
+    border-radius: 19px;
+    position: absolute;
+    bottom: -19px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);       /* x좌표, y좌표, 블러 */
+}
+
 /* tablet */
 @media screen and (max-width:976px) {
     #school-market {
         margin-top: calc(var(--nav-height) + 30px);
+    }
+}
+
+@media screen and (max-width:800px) {
+    .product-container {
+        justify-content: center;
     }
 }
