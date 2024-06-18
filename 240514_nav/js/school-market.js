@@ -1,3 +1,4 @@
+let allData;
 
 const showData = (data) => {
     // data 하나씩 뽑아서 <article> -> .product_container 의 자식으로 넣는다. <- HTML 로 가져오자
@@ -15,6 +16,7 @@ const showData = (data) => {
 }
 
 const setData = (data) => {
+    allData = data
     showData(data);
 
     // // 무뚝뚝.webp 출력하자
@@ -34,3 +36,10 @@ const getData = (() => {
     .catch((error) => console.log(error));
 });
 getData();
+
+const searchData = (query) => {
+    console.log(query)
+    // data 하나 씩 꺼내어, name이랑 query 비교해서 있으면, 모아놓자.
+    let searchData = allData.filter((oneData) => oneData["name"].includes(query));
+    showData(searchData);
+}
