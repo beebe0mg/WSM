@@ -35,6 +35,7 @@ body>header {
     top: 0;
     right: 0;
     left: 0;
+    z-index: 10;
 }
 nav.container { /* <nav class="nav container"> */
     background-color: var(--primary-color); /* 메뉴바 색상 줌 */
@@ -79,6 +80,7 @@ nav a {
         right: 0; /* left, right 줘서 양 옆에 딱 붙음 */
         left: 0; /* left, right 줘서 양 옆에 딱 붙음 */
         z-index: -1; /* 학매기를 nav바 뒤에 숨기자! */
+        backdrop-filter: blur(4px); /* 메뉴바에 가려지는 배경 흐리게 */
     }
 
     .nav-item {
@@ -95,6 +97,7 @@ nav a {
     .nav-toggle {
         display: block; /* 햄버거 메뉴 다시 보여지는 거 */
         cursor: pointer; /* 마우스 포인터 손으로 바꾸자 */
+        margin-top: 6px;
     }
 
     .show-menu { /* 방금 만든 클래스, 위에서 학매기 nav바 뒤로 숨긴 거 다시 내리기 */
