@@ -15,7 +15,7 @@
     border-radius: 28px;
     width: 80%;
     max-width: 800px;    /* 최대 너비 지정 더 이상 커지지 마! */
-    min-width: 500px;    /* 최소 너비 지정 더 이상 작아지지 마!*/
+    min-width: 400px;    /* 최소 너비 지정 더 이상 작아지지 마!*/
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);       /* x좌표, y좌표, 블러 */
 }
 #search-bar {
