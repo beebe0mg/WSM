@@ -31,7 +31,7 @@ body {
     background-color: var(--body-color);
 }
 body>header {
-    position: absolute; /* 절댓값, 절대 위치, 위치 조정 맘대로 할 수 있음, 위치 고정했음 nav바는 스크롤을 해도 고정 시킬 것임 */
+    position: fixed; /* 절댓값, 절대 위치, 위치 조정 맘대로 할 수 있음, 위치 고정했음 nav바는 스크롤을 해도 고정 시킬 것임 */
     top: 0;
     right: 0;
     left: 0;
