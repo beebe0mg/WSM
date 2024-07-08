@@ -3,7 +3,6 @@ h1 {
     /* 여기서 아이브 글자는 색이 안 바뀌는 이유는 인라인 CSS 태그에서 우선순위가 밀렸기 때문 */
 }
 
-
 li {
     background-color: chocolate;
 }
@@ -52,7 +51,7 @@ li:nth-child(2n) {      /* 짝수번째인데 li인 아이 */
 }
 
 h1, h3 {                /* h1과 h3에 모두 적용 */
-    /* background-color: gainsboro; */
+    background-color: gainsboro;
 }
 
 h1 + h2 {               /* h1과 h2는 자매여야 함. h1 바로 아랫자매 h2여야 함. 그리고 거기에만 적용됨 */
