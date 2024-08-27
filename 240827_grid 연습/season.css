@@ -1,0 +1,32 @@
+.container {
+    width: 800px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 30% 70%; /* 1fr 1fr; */ /* repeat(2, 1fr); */ /* repeat(2, 50%); */
+    grid-template-rows: 4fr 6fr;
+}
+
+.item {
+    /* text-align: center; 수평만 가운데로 */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: grid;
+    place-items: center; /* 수평, 수직 다 정렬 */
+}
+
+.item:first-child {
+    background-color: springgreen;
+}
+
+.item:nth-child(2) {
+    background-color: deepskyblue;
+}
+
+.item:nth-child(3) {
+    background-color: peru;
+}
+
+.item:last-child {
+    background-color: whitesmoke;
+}
