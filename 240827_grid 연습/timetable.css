@@ -1,0 +1,89 @@
+.container {
+    width: 600px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(6, 100px);
+}
+
+.item {
+    display: grid;
+    place-items: center;
+    border: 1px solid pink;
+}
+
+.item:first-child {
+    background-color: hotpink;
+    color:white;
+    font-weight: bold;
+}
+
+.item:nth-child(2) {
+    background-color: hotpink;
+    color:white;
+    font-weight: bold;
+}
+
+.item:nth-child(3) {
+    background-color: hotpink;
+    color:white;
+    font-weight: bold;
+}
+
+.item:nth-child(4) {
+    background-color: hotpink;
+    color:white;
+    font-weight: bold;
+}
+
+.item:nth-child(5) {
+    background-color: hotpink;
+    color:white;
+    font-weight: bold;
+}
+
+.item:nth-child(6) {
+    background-color: hotpink;
+    color:white;
+    font-weight: bold;
+}
+
+.cl {
+    color: hotpink;
+    font-weight: bold;
+}
+
+.DS, .CD, .JAVA, .CH, .PY, .WSM, .WSM1, .DONG {
+    /* grid-area: 4 / 3 / 6 / 4;  */
+    grid-row: span 2;
+}
+
+/*
+.CD {
+    grid-area: 4 / 5 / 6 / 6;
+}
+
+.JAVA {
+    grid-area: 3 / 4 / 5 / 5;
+}
+
+.PY {
+    grid-area: 6 / 5 / 8 / 6;
+}
+
+.CH {
+    grid-area: 6 / 6 / 8 / 7;
+}
+
+.WSM {
+    grid-area: 4 / 6 / 6 / 7;
+}
+
+.WSM1 {
+    grid-area: 7 / 3 / 9 / 4;
+}
+
+.DONG {
+    grid-area: 7 / 4 / 9 / 5;
+}
+*/
