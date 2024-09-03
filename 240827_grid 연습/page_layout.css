@@ -1,0 +1,60 @@
+/* container 클래스의 밑 전부에게 적용 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    /* body 에도 100% 를 줬으니 그 부모 html 에도 줘야 한다 */
+}
+
+.container * {
+    border: 1px solid gray;
+}
+
+.container {
+    width: 100%;
+    height: 100%;       /* 100vh */
+    /* height 을 안 주면 container 만큼 높이가 자동 지정 */
+    display: grid;
+    grid-template-columns: 100px 1fr 50px;
+    grid-template-rows: 44px 1fr 200px;
+    grid-template-areas: 
+    "header header header" /* 마지막을 none 으로 하면 빈칸 들어감 */
+    "side-left main side-right"
+    "footer footer footer";
+    /* 구역 이름만 바꾸면 마음대로 지정할 수 있다. */
+}
+
+/* 태그가 header 이면서 클래스 이름이 header 인 아이 */
+header.header {
+    grid-area: header;
+    /* 24 번째 줄에서 지정하고 있는 header 세 개 모두 */
+}
+
+.side1 {
+    grid-area: side-left;
+}
+
+main {
+    grid-area: main;
+}
+
+.side2 {
+    grid-area: side-right;
+}
+
+footer {
+    grid-area: footer;
+}
+
+nav {
+    height: 44px;
+}
+
+figure img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
