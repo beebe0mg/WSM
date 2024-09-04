@@ -1,4 +1,3 @@
-/* container 클래스의 밑 전부에게 적용 */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +8,7 @@ html {
     /* body 에도 100% 를 줬으니 그 부모 html 에도 줘야 한다 */
 }
 
+/* container 클래스의 밑 전부에게 적용 */
 .container * {
     border: 1px solid gray;
 }
@@ -18,8 +18,8 @@ html {
     height: 100%;       /* 100vh */
     /* height 을 안 주면 container 만큼 높이가 자동 지정 */
     display: grid;
-    grid-template-columns: 100px 1fr 50px;
-    grid-template-rows: 44px 1fr 200px;
+    grid-template-columns: 100px 1fr 50px;  /* SIDE1 | main | SIDE2 */
+    grid-template-rows: 44px 1fr 200px;     /* nav | main | footer */
     grid-template-areas: 
     "header header header" /* 마지막을 none 으로 하면 빈칸 들어감 */
     "side-left main side-right"
