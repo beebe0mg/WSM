@@ -5,7 +5,7 @@
 
 html {
     height: 100%;
-    /* body 에도 100% 를 줬으니 그 부모 html 에도 줘야 한다 */
+    /* body(container) 에도 100% 를 줬으니 그 부모 html 에도 줘야 한다 */
 }
 
 /* container 클래스의 밑 전부에게 적용 */
