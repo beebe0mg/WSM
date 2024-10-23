@@ -42,12 +42,14 @@ main {
 }
 
 #calendar,
-#selection-washingmachine-time {
+#selection-washingmachine-time,
+#selection-room-name {
     display: none;
 }
 
 #selection-washingmachine-time,
-#selection-room-name {
+#selection-room-name,
+#board {
     margin-top: 100px;
 }
 
@@ -70,4 +72,22 @@ main {
     padding: 10px 20px;
     margin-top: 40px;
     float: right;
+}
+
+.board-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    gap: 1px;
+}
+
+#board .header {
+    background-color: beige;
+}
+
+#board .item {
+    color: black;
+    font-size: var(--h2-font-size);
+    border: 1px solid gray;
+    height: 40px;
+    padding: 5px 10px;
 }
