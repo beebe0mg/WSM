@@ -1,3 +1,6 @@
+let allData;        // 초기 설정에 필요한 모든 데이터 : 세탁기, 시간, 호실
+let weeklyReservation;  // 미리 정해진 요일별 예약 데이터
+
 // selection-item 요소들 가져오자
 // 얘는 여러 개임!
 const selectionItemDivs = document.getElementsByClassName("selection-item");
@@ -10,6 +13,34 @@ const BoardDiv = document.querySelector("#board");
 
 // 네 개를 쭉 한 공간에 넣어두고, 하나씩 꺼내서 화면에 보여주기 (화면에는 하나만 나와야 함)
 const pageDivs = [calendarDiv, selectionWashingmachineTimeDiv, selectionRoomNameDiv, BoardDiv];
+console.log(pageDivs);
+
+// 초기 데이터 가져오자. allData.json, weekly-reservation.json
+const initData = () => {
+    const getAllData = () =>  {
+        const url = 'js/allData.json';
+        fetch(url)
+        .then(response => response.json())
+        .then(data => allData = data)
+        .catch(error => console.log(error.message))
+    }
+    const getWeeklyReservation = async() => {
+        const url = 'js/weekly-reservation.json';
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            weeklyReservation = data;
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+    getAllData();
+    getWeeklyReservation();
+
+    // console.log(allData.washingmachine);
+    // console.log(allData["washingmachine"]);
+}
+
 
 const setPage = (page) => {
     // clear selection 
@@ -35,4 +66,5 @@ const setPage = (page) => {
     pageDivs[page-1].style.display = "block";
 }
 
-// setPage(4);
+setPage(1);
+initData();
