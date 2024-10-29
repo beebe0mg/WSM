@@ -19,7 +19,10 @@ const setPage = (page) => {
     }
 
     // selection 하나만 칠하자
-    selectionItemDivs[page-1].classList.add("select-menu");
+    // pageDivs 가 BoardDiv 가 아닐 때만.... 들어가자
+    if (page != 4) {    // 세탁기 예약 현황표는 selection 이 없음
+        selectionItemDivs[page-1].classList.add("select-menu");
+    }
 
     // clear pageDivs
     // pageDiv 를 foreach 로 pageDivs 에서 가져오고 하나씩 보여주는 게 너무 힘드니까 우선은 전부 안 보이게!
