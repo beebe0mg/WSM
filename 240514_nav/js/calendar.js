@@ -93,8 +93,10 @@ const setCalendar = (date) => {
     // calendarContainerDiv.innerHTML += dateString;
     // div 요소 만들자, class 에 item 넣자, text 에 날짜 넣자. calendarContainerDiv 에 자식으로 붙이자
     for (let date = 1; date <= lastDate.getDate(); date++) {
-        let currentMonthDateDiv = document.createElement("div");    //<div></div>
+        let currentMonthDateDiv = document.createElement("div");    // <div></div>
         currentMonthDateDiv.className = "item";                     // <div class="item"></div>
+        currentMonthDateDiv.onclick = (event) => clickDate(event);  // <div class="item" onclick="clickDate"></div>
+        currentMonthDateDiv.dataset.date = `${year}-${month+1}-${date}`;    // <div class="item" onclick="clickDate" data-date="년-월-일"></div>
         currentMonthDateDiv.textContent = date;                     // <div class="item">1</div>
         calendarContainerDiv.appendChild(currentMonthDateDiv);      // <div id="calender-container"><div class="item">1</div></div>
     }
