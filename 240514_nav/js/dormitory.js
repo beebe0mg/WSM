@@ -108,27 +108,42 @@ const initWashingmachineTime = () => {
     let washingmachines;    // 세탁기 번호 모음
 
     // 기숙사에 있는 모든 세탁기, 시간 정보 가져오자
-    console.log(allData);
-    console.log(allData.washingmachine); // [1, 2, 3]
-    console.log(allData.time);
-    console.log(Object.keys(allData.time)); // ["1", "2", "3"]
+    // console.log(allData);
+    // console.log(allData.washingmachine); // [1, 2, 3]
+    // console.log(allData.time);
+    // console.log(Object.keys(allData.time)); // ["1", "2", "3"]
 
 
     // 미리 예약된 정보 가져오자
-    console.log(weeklyReservations);
+    // console.log(weeklyReservations);
 
     // 초기 데이터 세팅하자: {"1": ["1", "2", "3"], "2": ["1", "2", "3"], "3": ["1", "2", "3"]} 세탁기 번호 : 세탁기 시간
     // allData.washingmachine 에서 하나씩 꺼내자 => washingmachine
     allData.washingmachine.forEach((washingmachine) => {
         allWashingmachineTime[washingmachine] = Object.keys(allData.time); // allWashingmachineTime["1"] = ["1", "2", "3"] => allWashingmachineTime = {"1": ["1", "2", "3"]}
     });
-    console.log(allWashingmachineTime);
+    // console.log(allWashingmachineTime);
 
     // 선택한 날짜의 요일 구하자
+    let weekday = newReservation.date.getDay();
 
     // 그 요일의 미리 예약된 세탁기와 시간 파악하자
-
     // 예약된 게 있으면 select 목록에서 빼자
+    weeklyReservations.forEach((weeklyReservation) => {
+        // 사감쌤이 예약해 두신 호실의 요일 === 내가 정한 요일
+        if(weeklyReservation.weekday === weekday) {
+            const { washingmachine, time } = weeklyReservation;
+            // const washingmachine = weeklyReservation.washingmachine;
+            // const time = weeklyReservation.time;
+
+            const index = allWashingmachineTime[washingmachine].indexOf(String(time));  // 1 -> "1"
+            if (index > -1) {   // 예약된 시간 찾았다면
+                allWashingmachineTime[washingmachine].splice(index, 1);     // 그 시간 빼자
+            }
+        }
+    });
+
+    console.log(allWashingmachineTime);
 
     // 그 요일의 미리 예약된 세탁기와 시간이 다 차면, 그 세탁기 select 목록에서 빼자
 
