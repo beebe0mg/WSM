@@ -1,7 +1,7 @@
 let allData;        // 초기 설정에 필요한 모든 데이터 : 세탁기, 시간, 호실
 let weeklyReservations;  // 미리 정해진 요일별 예약 데이터
 let newReservation;     // 사용자가 새롭게 지금 입력하는 예약 정보. 1페이지에서 초기화하자
-let reservations = [];       // 사용자가 예약한 정보들의 덩어리
+let reservations = [];       // 사용자가 예약한 정보들의 덩어리ㄴ
 
 // selection-item 요소들 가져오자
 // 얘는 여러 개임!
@@ -72,8 +72,16 @@ const setPage = (page) => {
     // show pageDiv 1
     // pageDivs 의 배열의 calendarDiv 하나를 보여주자!
     pageDivs[page-1].style.display = "block";
-
-    if (page === 2) {   // 시간 선택: 세탁기, 시간
+    if (page === 1) {
+        // LocalStorage 에 저장한 예약들 가져오자
+        const storedReservations = localStorage.getItem("reservations")
+        if(storedReservations) {
+            reservations = JSON.parse(storedReservations);  // string -> JSON
+            reservations.map((reservation) => reservation.date = new Date(reservation.date)) //.date 에 저장된 string,date 러 비끄지
+        } else {            // 지정된 예약들이 없으면, (아예 예약 완료 버튼을 안 눌렀을 때)
+            reservations = [];
+        }
+    } else if (page === 2) {   // 시간 선택: 세탁기, 시간
         initWashingmachineTime();
 
     } else if (page === 3) {    // 호실 이름
@@ -161,9 +169,23 @@ const initWashingmachineTime = () => {
             }
         }
     });
-//    console.log(allWashingmachineTime);
+    // console.log(allWashingmachineTime);
 
-    // TODO : 사용자가 예약한 내용도 위의 것을 다 파악해서 빼자 (사감쌤이 세팅한 것 제외)
+    //사용자가 예약한 내용도 위의 것을 다 파악해서 빼자
+    reservations.forEach((reservation) => {
+        //사용자가 예약한 날자와 지금 입력하고 있는 새로운 예약의 날짜가 같으면, 그 세탁기 번호의 그 시간 빼자
+        if (reservation.date.getFullYear() == newReservation.date.getFullYear() 
+            && reservation.date.getMonth() == newReservation.date.getMonth()
+            && reservation.date.getDate() == newReservation.date.getDate()){
+            const {washingmachine, time} = reservation;
+            const index = allWashingmachineTime[washingmachine].indexOf(String(time)); // 1 -> "1"
+            if(index > -1){ //예약된 시간 찾았다면
+                allWashingmachineTime[washingmachine].splice(index, 1); //그 시간 빼자
+            }
+        }
+    });
+
+
 
     // select 들: 세탁기 번호, 시간들 만들자
     washingmachineSelect.innerHTML = "";    // 세탁기 option 없애자
@@ -244,4 +266,12 @@ const initTable = () => {
     `;
     });
     boardContainerDiv.innerHTML = itemString;      // String 을 표에 표시하자
+}
+
+const saveReservations = () => {
+    // 원래는 백엔드에 reservations 정보를 넘겨서 데이터베이스에 저장해야 함. 
+    // 그냥 로컬에 기록해둘 것이에요. LocalStorage 친구
+    alert("예약 완료");
+    localStorage.setItem("reservations", JSON.stringify(reservations));     // 예약들을 저장하자 JSON -> string
+
 }
