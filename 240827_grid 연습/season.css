@@ -13,6 +13,7 @@
     align-items: center; */
     display: grid;
     place-items: center; /* 수평, 수직 다 정렬 */
+    /* place-items: start */
 }
 
 .item:first-child {

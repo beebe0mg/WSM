@@ -185,8 +185,6 @@ const initWashingmachineTime = () => {
         }
     });
 
-
-
     // select 들: 세탁기 번호, 시간들 만들자
     washingmachineSelect.innerHTML = "";    // 세탁기 option 없애자
     washingmachines = Object.keys(allWashingmachineTime);
