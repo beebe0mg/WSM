@@ -7,6 +7,7 @@
     grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr; /* repeat(5, 1fr); */
     /* 전부 다 1 ㄷ 1 ㄷ 1 비율로 맞춰준 것임! 슬래시, 월 ~ 금까지 6개의 1fr 을 생성 */
     /* 처음에 / 부분만 px 지정해준 것임 */
+    grid-template-rows: repeat(8, 1fr);
 }
 
 .item {
@@ -42,6 +43,7 @@
     grid-row-start: 7;  /* span 2 가능 row-end 는 9 */
     grid-row-end: 9;    /* span 2 가능 row-end 는 7 */
     grid-column-start: 3;
+    grid-area: -3 / 3 /  -1 / 4;
 }
 
 .java {
@@ -65,7 +67,7 @@
 }
 
 .wsm2 {
-    grid-area: 4 / 6 / span 2 / 7;
+    grid-area: 4 / -2 / span 2 / -1;
 }
 
 .choice {

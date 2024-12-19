@@ -52,7 +52,7 @@ const setCalendar = (date) => {
     const firstDay = new Date(year, month, 1).getDay(); // 1일부터 가져와야 하니까 해당하는 년도의 달에 해당하는 1일의 요일을 구하는 것임. 0 - 일요일 ~~
     
     // 마지막 날짜 구하자 - 요일 구하기 위하여
-    const lastDate = new Date(year, month + 1, 1 - 1)    // 다음 달의 1일에서 1을 빼면 자동으로 저번 달의 마지막 날로 이동해줌!!! 31일 이면 31일, 30일이면 30일, 실제 마지막 날짜만 구하려면 astDate.getDate() 이라고 써 줘야 함
+    const lastDate = new Date(year, month + 1, 0)    // 다음 달의 1일에서 1을 빼면 자동으로 저번 달의 마지막 날로 이동해줌!!! 31일 이면 31일, 30일이면 30일, 실제 마지막 날짜만 구하려면 astDate.getDate() 이라고 써 줘야 함
     
     // 마지막 날짜의 요일 구하자 - 다음 달 앞 날짜 쓰기 위하여
     const lastDay = lastDate.getDay();
